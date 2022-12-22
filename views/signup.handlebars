@@ -1,17 +1,20 @@
-<section>
-  <h2>Create New Post</h2>
+<form class="signupform">
+  <div>
+    <label for="usernamesignup">Username:</label>
+    <input type="text" id="usernamesignup" />
+  </div>
+  <div>
+    <label for="emailsignup">Email:</label>
+    <input type="text" id="emailsignup" />
+  </div>
+  <div>
+    <label for="passwordsignup">Password:</label>
+    <input type="password" id="passwordsignup" />
+  </div>
+  <div>
+    <button type="submit">Sign Up</button>
+  </div>
+</form>
 
-  <form class="newpostform">
-    <div>
-      <label for="posttitle">Title</label>
-      <input type="text" id="posttitle" size="80" name="posttitle" />
-    </div>
-    <div>
-      <label for="posttext">Content</label>
-      <textarea name="posttext"></textarea>
-    </div>
-    <button type="submit" class="btn">Create Post</button>
-  </form>
-</section>
-
-<script src="../public/js/addpost.js"></script>
+<!-- javascript file-->
+<script src="../public/js/signup.js"></script>
