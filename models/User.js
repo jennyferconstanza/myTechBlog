@@ -9,7 +9,6 @@ class User extends Model {
     return bcrypt.compareSync(loginPW, this.password);
   }
 }
-
 // define table columns and config
 User.init(
   {
