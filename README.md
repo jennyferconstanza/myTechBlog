@@ -47,3 +47,5 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 ## Installation Instructions
 
 ## Links
+
+Open my Tech Blog [URL](https://jennyferconstanza.github.io/myTechBlog/) in your browser.
