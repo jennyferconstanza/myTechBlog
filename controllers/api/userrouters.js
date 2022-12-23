@@ -68,7 +68,7 @@ router.post("/", (req, res) => {
   });
 });
 
-// login 
+// route logs in
 router.post("/login", (req, res) => {
   User.findOne({
     where: {
@@ -95,4 +95,60 @@ router.post("/login", (req, res) => {
   });
 });
 
+// logging out
+router.post("/logout", withAuth, (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
 
+// route updates user
+router.put("/:id", withAuth, (req, res) => {
+  User.update(req.body, {
+    individualHooks: true,
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((dbUserData) => {
+      if (!dbUserData[0]) {
+        res
+          .status(404)
+          .json({ message: "Wrong id, no user found with this id." });
+        return;
+      }
+      res.json(dbUserData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+// route deleates a user
+router.delete("/:id", withAuth, (req, res) => {
+  User.destroy({
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((dbUserData) => {
+      if (!dbUserData) {
+        res
+          .status(404)
+          .json({ message: "Wrong id, no user found with this id." });
+        return;
+      }
+      res.json(dbUserData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+module.exports = router;
