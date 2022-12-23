@@ -35,3 +35,27 @@ a:hover {
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.createbtn:hover{
+    color:white;
+}
+
+button {
+    border: 0;
+    padding: 1%;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--primary-color);
+}
+
+button:hover{
+    background-color: var(--hover-color);
+}
+
+.postlist {
+    margin: 0;
+    padding: 0;
+}
