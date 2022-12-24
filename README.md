@@ -4,11 +4,13 @@
 ISC License (ISC) [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
 ## Table of Contents
+
 * [Acceptance Criteria](#acceptance-criteria)
 * [Installation Instructions](#installation-instructions)
 * [Links](#links)
 
 ## Acceptance Criteria
+
 ```md
 GIVEN a CMS-style blog site
 WHEN I visit the site for the first time
@@ -44,7 +46,12 @@ THEN I am signed out of the site
 WHEN I am idle on the site for more than a set time
 THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments
 ```
+
 ## Installation Instructions
+
+First, run ` npm i `
+Second, run ` mysql -u root -p ` and enter the password from the .env file
+Third, run ` npm start `
 
 ## Links
 
